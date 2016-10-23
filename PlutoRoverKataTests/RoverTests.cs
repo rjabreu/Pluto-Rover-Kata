@@ -53,7 +53,7 @@ namespace PlutoRoverKataTests
         [TestMethod]
         public void RoverIsNorth()
         {
-            Assert.IsTrue(rover.Heading == "N");
+            Assert.IsTrue(rover.Heading == 'N');
         }
 
         [TestMethod]
@@ -80,7 +80,7 @@ namespace PlutoRoverKataTests
         {
             rover = new Rover();
             rover.Move("L");
-            Assert.IsTrue(rover.Heading == "E");
+            Assert.IsTrue(rover.Heading == 'W');
         }
 
         [TestMethod]
@@ -88,13 +88,13 @@ namespace PlutoRoverKataTests
         {
             rover = new Rover();
             rover.Move("R");
-            Assert.IsTrue(rover.Heading == "W");
+            Assert.IsTrue(rover.Heading == 'E');
         }
 
         [TestMethod]
         public void TestCase1()
         {
-            rover.Move("F,F,R,F,F");
+            rover.Move("FFRFF");
             Assert.IsTrue(rover.PositionX == 2 && rover.PositionY == 2);
         }
     }
