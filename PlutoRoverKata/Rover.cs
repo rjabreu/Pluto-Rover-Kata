@@ -28,8 +28,21 @@ namespace PlutoRoverKata
             {
                 if (command == "F" && Heading == "N")
                     IncreasePosY();
+                if (command == "F" && Heading == "S")
+                    DecreasePosY();
+                if (command == "F" && Heading == "W")
+                    DecreasePosX();
+                if (command == "F" && Heading == "E")
+                    IncreasePosX();
+
                 if (command == "B" && Heading == "N")
                     DecreasePosY();
+                if (command == "B" && Heading == "E")
+                    DecreasePosX();
+                if (command == "B" && Heading == "S")
+                    IncreasePosY();
+                if (command == "B" && Heading == "W")
+                    IncreasePosX();
 
                 if (command == "L" || command == "R")
                     Turn(command);
@@ -86,13 +99,13 @@ namespace PlutoRoverKata
                 switch (Heading)
                 {
                     case "N":
-                        Heading = "W";
+                        Heading = "E";
                         break;
-                    case "W":
+                    case "E":
                         Heading = "S";
                         break;
-                    case "s":
-                        Heading = "E";
+                    case "S":
+                        Heading = "W";
                         break;
                     default:
                         break;

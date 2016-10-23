@@ -90,5 +90,12 @@ namespace PlutoRoverKataTests
             rover.Move("R");
             Assert.IsTrue(rover.Heading == "W");
         }
+
+        [TestMethod]
+        public void TestCase1()
+        {
+            rover.Move("F,F,R,F,F");
+            Assert.IsTrue(rover.PositionX == 2 && rover.PositionY == 2);
+        }
     }
 }
