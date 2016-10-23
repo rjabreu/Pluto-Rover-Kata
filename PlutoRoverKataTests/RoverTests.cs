@@ -78,12 +78,17 @@ namespace PlutoRoverKataTests
         [TestMethod]
         public void TurnLeft()
         {
-            
+            rover = new Rover();
+            rover.Move("L");
+            Assert.IsTrue(rover.Heading == "E");
         }
 
         [TestMethod]
         public void TurnRight()
         {
+            rover = new Rover();
+            rover.Move("R");
+            Assert.IsTrue(rover.Heading == "W");
         }
     }
 }

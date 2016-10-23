@@ -11,7 +11,7 @@ namespace PlutoRoverKata
         public int PositionY { get; set; }
         public int PositionX { get; set; }
         public string Heading { get; set; }
-
+ 
 
         public Rover()
         {
@@ -28,9 +28,12 @@ namespace PlutoRoverKata
             {
                 if (command == "F" && Heading == "N")
                     IncreasePosY();
-             
-                    
-             
+                if (command == "B" && Heading == "N")
+                    DecreasePosY();
+
+                if (command == "L" || command == "R")
+                    Turn(command);
+                
             }
         }
 
@@ -57,5 +60,48 @@ namespace PlutoRoverKata
             PositionX++;
         }
 
+
+        //needs to be dry
+        private void Turn(string command)
+        {
+
+            if(command == "L")
+            {
+                switch (Heading)
+                {
+                    case "N":
+                        Heading = "E";
+                        break;
+                    case "E":
+                        Heading = "S";
+                        break;
+                    case "S":
+                        Heading = "W";
+                        break;
+                    default:
+                        break;
+                }
+            }else if (command == "R")
+            {
+                switch (Heading)
+                {
+                    case "N":
+                        Heading = "W";
+                        break;
+                    case "W":
+                        Heading = "S";
+                        break;
+                    case "s":
+                        Heading = "E";
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+
+
+        }
     }
 }
