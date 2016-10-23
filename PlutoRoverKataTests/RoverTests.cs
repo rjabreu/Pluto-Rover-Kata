@@ -18,7 +18,7 @@ namespace PlutoRoverKataTests
 
 
         [TestMethod]
-        public void CanMoveY()
+        public void CanMoveUpY()
         {
             rover.IncreasePosY();
 
@@ -26,18 +26,29 @@ namespace PlutoRoverKataTests
         }
 
         [TestMethod]
-        public void CanMoveX()
+        public void CanMoveUpX()
         {
             rover.IncreasePosX();
             Assert.IsTrue(rover.PositionX == 1);
         }
 
         [TestMethod]
-        public void MoveForward()
+        public void CanMoveDownX()
         {
-
-
+            rover.IncreasePosX();
+            rover.DecreasePosX();
+            Assert.IsTrue(rover.PositionX == 0);
         }
+
+        [TestMethod]
+        public void CanMoveDownY()
+        {
+            rover.IncreasePosY();
+            rover.DecreasePosY();
+            Assert.IsTrue(rover.PositionY == 0);
+        }
+
+
 
         [TestMethod]
         public void RoverIsNorth()
@@ -46,13 +57,28 @@ namespace PlutoRoverKataTests
         }
 
         [TestMethod]
+        public void MoveForward()
+        {
+            rover = new Rover();
+            rover.Move("F");
+            Assert.IsTrue(rover.PositionY == 1);
+
+        }
+
+
+
+        [TestMethod]
         public void MoveBackward()
         {
+            rover = new Rover();
+            rover.Move("F,B");
+            Assert.IsTrue(rover.PositionY == 0);
         }
 
         [TestMethod]
         public void TurnLeft()
         {
+            
         }
 
         [TestMethod]

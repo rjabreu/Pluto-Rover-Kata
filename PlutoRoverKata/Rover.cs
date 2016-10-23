@@ -22,15 +22,29 @@ namespace PlutoRoverKata
 
         public void Move(string sentCommands)
         {
-            string[] commands = sentCommands.Split();
+            string[] commands = sentCommands.Split(',');
 
             foreach (var command in commands)
             {
-                if (command.Equals("F") )
-                {
-
-                }
+                if (command == "F" && Heading == "N")
+                    IncreasePosY();
+             
+                    
+             
             }
+        }
+
+        public void DecreasePosX()
+        {
+            if(PositionX > 0)
+                PositionX--;
+            
+        }
+
+        public void DecreasePosY()
+        {
+            if(PositionY > 0)
+                PositionY--;
         }
 
         public void IncreasePosY()
